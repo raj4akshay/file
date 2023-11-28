@@ -1,0 +1,126 @@
+.TH INTERNSCTL 1 "2023-11-28" "v0.1.0" "internsctl Manual"
+
+.SH NAME
+internsctl \- Custom Linux command for various operations
+
+.SH SYNOPSIS
+.B internsctl
+[\fIsubcommand\fP] [\fIoptions\fP] [\fIarguments\fP]
+
+.SH DESCRIPTION
+.B internsctl
+is a custom Linux command that provides various operations through subcommands.
+
+.PP
+The available subcommands are:
+
+.IP
+.RS
+\fBcpu\fP
+- Get CPU information.
+
+.PP
+\fBmemory\fP
+- Get memory information.
+
+.PP
+\fBuser\fP
+- Manage user-related operations.
+
+.PP
+\fBfile\fP
+- Perform file-related operations.
+
+.RE
+
+.SH SUBCOMMANDS
+
+.PP
+.B cpu
+\fBgetinfo\fP
+[\fIoptions\fP]
+.RS
+.IP
+Displays information about the CPU.
+
+.PP
+\fBmemory
+\fBgetinfo\fP
+[\fIoptions\fP]
+.RS
+.IP
+Displays information about memory.
+
+.PP
+\fBuser
+\fBcreate\fP
+\fI<username\fP>
+.RS
+.IP
+Creates a new user with the specified username.
+
+.PP
+\fBuser
+\fBlist\fP
+[\fB--sudo-only\fP]
+.RS
+.IP
+Lists all regular users or, with the \fB--sudo-only\fP option, lists users with sudo permissions.
+
+.PP
+\fBfile
+\fBgetinfo\fP
+[\fIoptions\fP] \fI<file-name\fP>
+.RS
+.IP
+Gets information about a file. Options include \fB--size\fP, \fB--permissions\fP, \fB--owner\fP, and \fB--last-modified\fP.
+
+.RE
+
+.SH OPTIONS
+
+.PP
+\fB--version\fP
+.RS
+.IP
+Displays the version of \fBinternsctl\fP.
+
+.PP
+\fB--help\fP
+.RS
+.IP
+Displays this help message.
+
+.SH EXAMPLES
+
+.PP
+To get CPU information:
+.BR \fBinternsctl cpu getinfo\fP
+
+.PP
+To list all users:
+.BR \fBinternsctl user list\fP
+
+.PP
+To get information about a file's size:
+.BR \fBinternsctl file getinfo --size <file-name>\fP
+
+.SH SEE ALSO
+.BR lscpu (1),
+.BR free (1),
+.BR useradd (8),
+.BR getent (1),
+.BR stat (1).
+
+.SH AUTHOR
+Your Name
+
+.SH BUGS
+Report any bugs to your@email.com.
+
+.SH COPYRIGHT
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+.SH NOTES
+This manual page was written for the internsctl command created by Your Name.

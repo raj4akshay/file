@@ -1,0 +1,48 @@
+
+
+
+print_help() {
+    echo "Usage: internsctl <subcommand> [options]"
+    echo "Subcommands:"
+    echo "  cpu getinfo"
+    echo "  memory getinfo"
+    echo "  user create <username>"
+    echo "  user list [--sudo-only]"
+    echo "  file getinfo <file-name>"
+    echo "  file getinfo [options] <file-name>"
+    echo "Options:"
+    echo "  --version   Display the version of internsctl"
+    echo "  --help      Display this help message"
+}
+
+
+#!/bin/bash
+
+case "$1" in
+    "cpu")
+        shift
+        scripts/cpu.sh "$@"
+        ;;
+    "memory")
+        shift
+        scripts/memory.sh "$@"
+        ;;
+    "user")
+        shift
+        scripts/user.sh "$@"
+        ;;
+    "file")
+        shift
+        scripts/file.sh "$@"
+        ;;
+    "--version")
+        echo "internsctl v0.1.0"
+        ;;
+    "--help")
+        print_help
+        ;;
+    *)
+        echo "Invalid subcommand: $1"
+        exit 1
+        ;;
+esac
